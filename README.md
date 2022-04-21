@@ -18,4 +18,4 @@ Navigate to http://localhost:3000
 default username : admin/admin
 
 Login using default username/password or create
-this will redirect you to shout box page
+this will redirect you to login page

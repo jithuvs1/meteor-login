@@ -5,8 +5,8 @@ import "../imports/api/postsMethods";
 import "../imports/api/userMethods";
 import "../imports/api/postsPublications";
 
-const SEED_USERNAME = "admin";
-const SEED_PASSWORD = "admin";
+const SEED_USERNAME = "meteorite";
+const SEED_PASSWORD = "password";
 
 Meteor.startup(() => {
   // If User  is empty, add default data.
