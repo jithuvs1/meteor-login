@@ -1,7 +1,21 @@
-# Simple Todo List (archived)
+# meteor-login
 
-The new Blaze Tutorial lives here https://github.com/meteor/blaze-tutorial/
+## Install Meteor
 
-Any PRs or issues should be created there now.
+Go to https://www.meteor.com/install follow installation instructions
 
-You can check the tutorial here https://blaze-tutorial.meteor.com/
+## Dependencies installation
+
+Navigate to project root folder
+
+`$meteor npm install`
+
+## Start App
+
+`$meteor`
+
+Navigate to http://localhost:3000
+
+default username :meteorite
+
+default password :password
