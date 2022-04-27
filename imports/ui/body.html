@@ -1,25 +1,25 @@
 <body>
   <div class="container">
     <header>
-      <h1>Chat messages({{incompleteCount}})</h1>
-
-      <!-- <label class="hide-completed">
-        <input type="checkbox" />
-        Hide Completed Tasks
-      </label> <label class="hide-completed">
-        <input type="checkbox" />
-        Hide Completed Tasks
-      </label> -->
+      <h1>A Message System</h1>
 
       {{> loginButtons}} {{#if currentUser}}
       <form class="new-task">
-        <input type="text" name="text" placeholder="Add chat" />
+        <input type="text" name="text" placeholder="Type your message here" />
       </form>
       {{/if}}
     </header>
-
+    <!--
     <ul>
-      {{#each tasks}} {{> task}} {{/each}}
+            {{#if currentUser}}
+      {{#each messages}}
+        {{> message}}
+	    {{/each}}
+	          {{/if}}
+    </ul>
+-->
+    <ul id="mainpage">
+      {{#each messages}} {{> message}} {{/each}}
     </ul>
   </div>
 </body>
