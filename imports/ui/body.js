@@ -15,7 +15,7 @@ Template.body.onCreated(function bodyOnCreated() {
 Template.body.helpers({
   messages() {
 	const instance = Template.instance();
-	return Messages.find({}, {text:1, createdAt:1});
+	return Messages.find({}, {text:1,sort: { createdAt: -1 },});
     },
 });
 
