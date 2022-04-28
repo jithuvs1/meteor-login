@@ -9,6 +9,7 @@ Template.message.helpers({
   },
 });
 
+
 Template.message.events({
   'click .delete'() {
     Meteor.call('messages.remove', this._id);

@@ -11,6 +11,7 @@ if (Meteor.isServer) {
   });
 }
 
+//authentication foruser
 Meteor.methods({
   'messages.remove'(messageId) {
 	check(messageId, String);
