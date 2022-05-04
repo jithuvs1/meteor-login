@@ -9,8 +9,7 @@ if (Meteor.isServer) {
   Meteor.publish('messages', function messagesPublication() {
 		return Messages.find(); //{ owner: this.userId }	
   });
-  
-}
+
 
 //authentication foruser
 Meteor.methods({
@@ -28,6 +27,7 @@ Meteor.methods({
   },
 
 });
+}
 
 Messages.allow({
 	insert:function(userId,doc){
