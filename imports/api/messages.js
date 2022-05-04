@@ -9,6 +9,17 @@ if (Meteor.isServer) {
   Meteor.publish('messages', function messagesPublication() {
 		return Messages.find(); //{ owner: this.userId }	
   });
+  Messages.allow({
+	insert:function(userId,doc){
+	   	return true;
+   },
+   update:function(userId,doc,flields,modifier){
+	   	return true;
+   },
+   remove: function(userId,doc){
+	   return false;
+    }
+ })
 }
 
 //authentication foruser
