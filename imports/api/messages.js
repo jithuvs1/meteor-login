@@ -9,17 +9,7 @@ if (Meteor.isServer) {
   Meteor.publish('messages', function messagesPublication() {
 		return Messages.find(); //{ owner: this.userId }	
   });
-  Messages.allow({
-	insert:function(userId,doc){
-	   	return true;
-   },
-   update:function(userId,doc,flields,modifier){
-	   	return true;
-   },
-   remove: function(userId,doc){
-	   return false;
-    }
- })
+  
 }
 
 //authentication foruser
@@ -38,3 +28,18 @@ Meteor.methods({
   },
 
 });
+
+Messages.allow({
+	insert:function(userId,doc){
+		//return userId;
+		// doc.owner === userId
+		return userId && doc.owner === userId;
+   },
+   update:function(userId,doc,flields,modifier){
+	   return doc.owner === userId;
+   },
+   remove: function(userId,doc){
+	   return false;
+    },
+	fetch: ['owner']
+ })
