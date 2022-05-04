@@ -36,11 +36,11 @@ Messages.allow({
 		//return userId;
 		// doc.owner === userId
 		return userId && doc.owner === userId;
-},
-update:function(userId,doc,flields,modifier){
-	return doc.owner === userId;
-},
-	fetch: ['owner']
+	},
+	update:function(userId,doc,flields,modifier){
+		return doc.owner === userId;
+	},
+		fetch: ['owner']
 })
 
 Messages.deny({
