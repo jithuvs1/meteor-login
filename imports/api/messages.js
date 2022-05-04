@@ -38,8 +38,14 @@ Messages.allow({
    update:function(userId,doc,flields,modifier){
 	   return doc.owner === userId;
    },
-   remove: function(userId,doc){
-	   return false;
-    },
+	fetch: ['owner']
+ })
+
+ Messages.deny({
+	remove:function(userId,doc){
+		//return userId;
+		// doc.owner === userId
+		return false;
+	},
 	fetch: ['owner']
  })
