@@ -10,6 +10,7 @@ if (Meteor.isServer) {
 		return Messages.find(); //{ owner: this.userId }	
   });
 
+ 
 
 //authentication foruser
 Meteor.methods({
@@ -27,6 +28,7 @@ Meteor.methods({
   },
 
 });
+
 }
 
 Messages.allow({
@@ -34,18 +36,18 @@ Messages.allow({
 		//return userId;
 		// doc.owner === userId
 		return userId && doc.owner === userId;
-   },
-   update:function(userId,doc,flields,modifier){
-	   return doc.owner === userId;
-   },
+},
+update:function(userId,doc,flields,modifier){
+	return doc.owner === userId;
+},
 	fetch: ['owner']
- })
+})
 
- Messages.deny({
+Messages.deny({
 	remove:function(userId,doc){
 		//return userId;
 		// doc.owner === userId
 		return false;
 	},
 	fetch: ['owner']
- })
+})
